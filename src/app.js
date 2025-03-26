@@ -4,14 +4,27 @@ const express = require('express')
 
 const app = express();
 
-app.use("/",(req , res)=>{
 
-        res.send("hii");
-})
-app.use("/signup",(req , res)=>{
+app.get("/user" , (req , res)=>{
 
-    res.send("hello");
+    res.send({firstName: "SohamBiswas",
+        LastName:"Biswas",
+        Hobby:"Football" })
 })
+app.post("/user" , (req , res)=>{
+
+    res.send("saved scucessfully")})
+
+// app.use("/signup",(req , res)=>{
+
+//     res.send("hello");
+// })
+
+// app.use("/",(req , res)=>{
+
+//         res.send("hii");
+// })
+
 
 app.listen(3000 , ()=>{
 
